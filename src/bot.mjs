@@ -26,7 +26,7 @@ const startText = '<b>👏Welcome to the catizens universe!</b> \n 🐱Upgrade y
 
 const inlineKeyboard = new InlineKeyboard().webApp(
     "start app",
-    "th-mini-app-mvp.vercel.app"
+    "https://th-mini-app-mvp.vercel.app"
 ).row().url(
     "Join Community",
     "https://grammy.dev/zh/plugins/keyboard"
