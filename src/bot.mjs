@@ -1,4 +1,4 @@
-import { Bot, InputFile, session, InputMediaBuilder } from 'grammy'
+import { Bot, InputFile, InlineKeyboard, InputMediaBuilder, Keyboard } from 'grammy'
 import { Menu, MenuRange } from '@grammyjs/menu'
 
 export const {
@@ -28,9 +28,32 @@ const photo = InputMediaBuilder.photo("https://grammy.dev/images/grammY.png", {
     show_caption_above_media: false,
     parse_mode: "HTML",
 });
+
+const inlineKeyboard = new InlineKeyboard().text("click", "click-payload");
+
+const labels = [
+    "Yes, they certainly are",
+    "I'm not quite sure",
+    "No. 😈",
+];
+const buttonRows = labels
+    .map((label) => [Keyboard.text(label)]);
+const keyboard = Keyboard.from(buttonRows).resized();
+
 bot.command("start", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
     // { parse_mode: "HTML" },)
+    await ctx.reply('Hello', {
+        reply_markup: keyboard,
+    });
     console.log("test")
-    await ctx.replyWithMediaGroup([photo, photo]);
+    await ctx.replyWithMediaGroup([photo], {
+        reply_markup: inlineKeyboard,
+    });
+});
+
+bot.callbackQuery("click-payload", async (ctx) => {
+    await ctx.answerCallbackQuery({
+        text: "You were curious, indeed!",
+    });
 });
