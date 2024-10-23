@@ -24,7 +24,7 @@ bot.on('message:new_chat_members', ctx => {
 
 const startText = '<b>👏Welcome to the catizens universe!</b> \n 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! \n <a href="https://grammy.dev">Homepage</a>.'
 
-const inlineKeyboard = new InlineKeyboard().webApp(
+const inlineKeyboard = new InlineKeyboard().url(
     "start app",
     "https://t.me/tqweqeetris_bot/testapp?startapp=referral=99281932"
 ).row().url(
