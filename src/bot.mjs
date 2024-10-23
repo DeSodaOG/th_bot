@@ -36,7 +36,7 @@ const inlineKeyboard = new InlineKeyboard().webApp(
 );
 
 const labels = [
-    "Yes, they certainly are",
+    "Yes",
     "I'm not quite sure",
     "No. 😈",
 ];
