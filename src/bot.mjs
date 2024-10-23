@@ -23,11 +23,6 @@ bot.on('message:new_chat_members', ctx => {
 })
 
 const startText = '<b>👏Welcome to the catizens universe!</b> \n 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! \n <a href="https://grammy.dev">Homepage</a>.'
-const photo = InputMediaBuilder.photo("https://grammy.dev/images/grammY.png", {
-    caption: startText,
-    show_caption_above_media: false,
-    parse_mode: "HTML",
-});
 
 const inlineKeyboard = new InlineKeyboard().text("click", "click-payload");
 
@@ -47,7 +42,10 @@ bot.command("start", async (ctx) => {
         reply_markup: keyboard,
     });
     console.log("test")
-    await ctx.replyWithMediaGroup([photo], {
+    await ctx.replyWithPhoto("https://grammy.dev/images/grammY.png", {
+        caption: startText,
+        show_caption_above_media: false,
+        parse_mode: "HTML",
         reply_markup: inlineKeyboard,
     });
 });
