@@ -23,7 +23,7 @@ bot.on('message:new_chat_members', ctx => {
 })
 
 const startText = '<b>👏Welcome to the catizens universe!</b> \n 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! \n <a href="https://grammy.dev">Homepage</a>.'
-
+const helpText = '<b>🧑‍🤝‍🧑Dear Catizens, please feel free to contact us anytime while using our products.</b> \n <b>📖 QA Doc</b>If you have any questions, please first look for answers in the QA section. \n links: <a href="https://grammy.dev">https://grammy.dev</a>.'
 const inlineKeyboard = new InlineKeyboard().webApp(
     "start app",
     "https://th-mini-app-mvp.vercel.app"
@@ -62,5 +62,14 @@ bot.command("start", async (ctx) => {
 bot.callbackQuery("click-payload", async (ctx) => {
     await ctx.answerCallbackQuery({
         text: "You were curious, indeed!",
+    });
+});
+
+bot.command("help", async (ctx) => {
+    // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
+    // { parse_mode: "HTML" },)
+    await ctx.reply(helpText, {
+        parse_mode: "HTML",
+        reply_markup: inlineKeyboard,
     });
 });
