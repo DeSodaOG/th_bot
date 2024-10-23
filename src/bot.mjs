@@ -22,12 +22,11 @@ bot.on('message:new_chat_members', ctx => {
 
 })
 
-const startText = '<b>👏Welcome to the catizens universe!</b> <br /> 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! <a href="https://grammy.dev">Homepage</a>.'
+const startText = '<b>👏Welcome to the catizens universe!</b> \n 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! \n <a href="https://grammy.dev">Homepage</a>.'
 const photo = InputMediaBuilder.photo("https://grammy.dev/images/grammY.png", {
-    // caption: startText,
-    // show_caption_above_media: false,
-    // parse_mode: "HTML",
-    // 其他
+    caption: startText,
+    show_caption_above_media: false,
+    parse_mode: "HTML",
 });
 bot.command("start", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
