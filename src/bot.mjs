@@ -1,4 +1,4 @@
-import { Bot, InputFile, session } from 'grammy'
+import { Bot, InputFile, session, InputMediaBuilder } from 'grammy'
 import { Menu, MenuRange } from '@grammyjs/menu'
 
 export const {
@@ -22,8 +22,15 @@ bot.on('message:new_chat_members', ctx => {
 
 })
 
+const startText = '<b>👏Welcome to the catizens universe!</b> <br /> 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! <a href="https://grammy.dev">Homepage</a>.'
+const photo = InputMediaBuilder.photo("https://grammy.dev/images/grammY.png", {
+    caption: startText,
+    show_caption_above_media: false,
+    parse_mode: "HTML",
+    // 其他
+});
 bot.command("start", async (ctx) => {
-    ctx.reply('<b>Hi!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
-        { parse_mode: "HTML" },)
-
+    // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
+    // { parse_mode: "HTML" },)
+    await ctx.replyWithMediaGroup(photo);
 });
