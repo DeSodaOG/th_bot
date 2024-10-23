@@ -32,5 +32,5 @@ const photo = InputMediaBuilder.photo("https://grammy.dev/images/grammY.png", {
 bot.command("start", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
     // { parse_mode: "HTML" },)
-    await ctx.replyWithMediaGroup(photo);
+    await ctx.replyWithMediaGroup([photo, photo]);
 });
