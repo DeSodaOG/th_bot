@@ -28,6 +28,7 @@ const inlineKeyboard = new InlineKeyboard().url(
 );
 
 const keyboard = new Keyboard().webApp(
+    "start app",
     "https://th-mini-app-mvp.vercel.app",
 ).resized();
 
