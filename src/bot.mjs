@@ -59,6 +59,22 @@ bot.command("start", async (ctx) => {
     });
 });
 
+bot.command("start@TeleHunterBot", async (ctx) => {
+    // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
+    // { parse_mode: "HTML" },)
+    await ctx.reply('Hello New Member', {
+        reply_markup: keyboard,
+    });
+    console.log("test from group")
+    // await ctx.replyWithPhoto("https://grammy.dev/images/grammY.png", {
+    //     caption: startText,
+    //     show_caption_above_media: false,
+    //     parse_mode: "HTML",
+    //     reply_markup: inlineKeyboard,
+    // });
+});
+
+
 bot.callbackQuery("click-payload", async (ctx) => {
     await ctx.answerCallbackQuery({
         text: "You were curious, indeed!",
