@@ -24,9 +24,9 @@ bot.on('message:new_chat_members', ctx => {
 
 const startText = '<b>👏Welcome to the catizens universe!</b> \n 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! \n <a href="https://grammy.dev">Homepage</a>.'
 const helpText = '<b>🧑‍🤝‍🧑Dear Catizens, please feel free to contact us anytime while using our products.</b> \n <b>📖 QA Doc</b>If you have any questions, please first look for answers in the QA section. \n links: <a href="https://grammy.dev">https://grammy.dev</a>.'
-const inlineKeyboard = new InlineKeyboard().webApp(
+const inlineKeyboard = new InlineKeyboard().url(
     "start app",
-    "https://th-mini-app-mvp.vercel.app"
+    "https://t.me/TeleHunterBot/thapp?startapp"
 ).row().url(
     "Join Community",
     "https://grammy.dev/zh/plugins/keyboard"
@@ -55,7 +55,7 @@ bot.command("start", async (ctx) => {
         caption: startText,
         show_caption_above_media: false,
         parse_mode: "HTML",
-        // reply_markup: inlineKeyboard,
+        reply_markup: inlineKeyboard,
     });
 });
 
