@@ -14,14 +14,6 @@ export const {
 // Default grammY bot instance
 export const bot = new Bot(token)
 
-
-
-bot.on('message:new_chat_members', ctx => {
-
-    ctx.reply("Hello, new member.")
-
-})
-
 const startText = '<b>👏Welcome to the catizens universe!</b> \n 🐱Upgrade your cats, earn more coins, boost your ranking, and get more airdrop rewards! \n <a href="https://grammy.dev">Homepage</a>.'
 const helpText = '<b>🧑‍🤝‍🧑Dear Catizens, please feel free to contact us anytime while using our products.</b> \n <b>📖 QA Doc</b>If you have any questions, please first look for answers in the QA section. \n links: <a href="https://grammy.dev">https://grammy.dev</a>.'
 const inlineKeyboard = new InlineKeyboard().url(
@@ -35,14 +27,27 @@ const inlineKeyboard = new InlineKeyboard().url(
     "https://x.com/CatizenAI"
 );
 
-const labels = [
-    "Yes",
-    "I'm not quite sure",
-    "No. 😈",
-];
-const buttonRows = labels
-    .map((label) => [Keyboard.text(label)]);
-const keyboard = Keyboard.from(buttonRows).resized();
+const keyboard = new Keyboard().url(
+    "start app",
+    "https://t.me/TeleHunterBot/thapp?startapp"
+).row().url(
+    "Join Community",
+    "https://grammy.dev/zh/plugins/keyboard"
+).row().url(
+    "Follow X",
+    "https://x.com/CatizenAI"
+).resized();
+
+bot.on('message:new_chat_members', async (ctx) => {
+    await ctx.reply("Hello, new hunters! refresh your Mini APP to claim the init 10000 rewards.");
+
+    await ctx.replyWithPhoto("https://grammy.dev/images/grammY.png", {
+        caption: startText,
+        show_caption_above_media: false,
+        parse_mode: "HTML",
+        reply_markup: inlineKeyboard,
+    });
+})
 
 bot.command("start", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
