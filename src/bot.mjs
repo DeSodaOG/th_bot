@@ -28,8 +28,7 @@ const inlineKeyboard = new InlineKeyboard().url(
 );
 
 const keyboard = new Keyboard().webApp(
-    "start app",
-    "https://th-mini-app-mvp.vercel.app"
+    "https://th-mini-app-mvp.vercel.app",
 ).resized();
 
 bot.on('message:new_chat_members', async (ctx) => {
@@ -46,10 +45,13 @@ bot.on('message:new_chat_members', async (ctx) => {
 bot.command("start", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
     // { parse_mode: "HTML" },)
-    await ctx.reply('Hello', {
-        reply_markup: keyboard,
-    });
-    console.log("test")
+    if (ctx.chat.type === 'private') {
+        await ctx.reply('Hello', {
+            reply_markup: keyboard
+        });
+    }
+
+    console.log(ctx.chat.type)
     await ctx.replyWithPhoto("https://grammy.dev/images/grammY.png", {
         caption: startText,
         show_caption_above_media: false,
