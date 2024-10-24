@@ -29,7 +29,7 @@ const inlineKeyboard = new InlineKeyboard().url(
 
 const keyboard = new Keyboard().webApp(
     "start app",
-    "th-mini-app-mvp.vercel.app"
+    "https://th-mini-app-mvp.vercel.app"
 ).resized();
 
 bot.on('message:new_chat_members', async (ctx) => {
