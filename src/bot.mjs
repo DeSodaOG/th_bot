@@ -27,15 +27,9 @@ const inlineKeyboard = new InlineKeyboard().url(
     "https://x.com/CatizenAI"
 );
 
-const keyboard = new Keyboard().url(
+const keyboard = new Keyboard().webApp(
     "start app",
-    "https://t.me/TeleHunterBot/thapp?startapp"
-).row().url(
-    "Join Community",
-    "https://grammy.dev/zh/plugins/keyboard"
-).row().url(
-    "Follow X",
-    "https://x.com/CatizenAI"
+    "th-mini-app-mvp.vercel.app"
 ).resized();
 
 bot.on('message:new_chat_members', async (ctx) => {
