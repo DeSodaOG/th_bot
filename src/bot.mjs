@@ -14,7 +14,7 @@ export const {
 // Default grammY bot instance
 export const bot = new Bot(token)
 
-const startText = '<b>👏Welcome to the Tele Hunter Community!</b> \n🐳 TeleHunter is the first telegram user traffic affiliate union. Build your first TG traffic affiliates system, make your affiliates help you earn passive income, and hunt for more telegram network value.!\n💰 Earn $Hunter Points by Inviting More! \n🔥 Participate the Contest to share $6000 Prize Pool. \n Homepage: <a href="https://telehunter.xyz">https://telehunter.xyz</a> \n X: <a href="https://x.com/Tele_Hunter_xyz">https://x.com/Tele_Hunter_xyz</a> \n Blog: <a href="https://medium.com/@telehunter">https://medium.com/@telehunter</a>'
+const startText = '<b>👏Welcome to the Tele Hunter Community!</b> \n🐳 TeleHunter is the first telegram user traffic affiliate union. Build your first TG traffic affiliates system, make your affiliates help you earn passive income, and hunt for more telegram network value.!\n💰 Earn $Hunter Points by Inviting More! \n🔥 Participate the Contest to share $6000 Prize Pool. \n <b>Homepage:</b> <a href="https://telehunter.xyz">https://telehunter.xyz</a> \n <b>X:</b> <a href="https://x.com/Tele_Hunter_xyz">https://x.com/Tele_Hunter_xyz</a> \n <b>Blog:</b> <a href="https://medium.com/@telehunter">https://medium.com/@telehunter</a>'
 const helpText = '<b>🧑‍🤝‍🧑Dear Hunters, please feel free to contact us anytime while using our products.</b> \n <b>📖 QA Doc</b>If you have any questions, please first look for answers in the QA section. \n <a href="https://telehunters-organization.gitbook.io/telehunter/getting-started/q-and-a">Here is the link</a>.'
 const inlineKeyboard = new InlineKeyboard().url(
     "start app",
@@ -35,7 +35,7 @@ const keyboard = new Keyboard().webApp(
 bot.on('message:new_chat_members', async (ctx) => {
     // await ctx.reply("Hello, new hunter! claim the init 10000 rewards.");
 
-    await ctx.replyWithPhoto("https://github.com/TeleHunter/TeleHunterBrandKit/blob/main/assets/banner.png", {
+    await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/10/31/a32a301cfef3bfd5b21aea9074078d9f.png", {
         caption: startText,
         show_caption_above_media: false,
         parse_mode: "HTML",
