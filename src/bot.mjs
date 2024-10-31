@@ -53,7 +53,7 @@ bot.command("start", async (ctx) => {
     }
 
     console.log(ctx.chat.type)
-    await ctx.replyWithPhoto("https://github.com/TeleHunter/TeleHunterBrandKit/blob/main/assets/banner.png", {
+    await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/10/31/a32a301cfef3bfd5b21aea9074078d9f.png", {
         caption: startText,
         show_caption_above_media: false,
         parse_mode: "HTML",
