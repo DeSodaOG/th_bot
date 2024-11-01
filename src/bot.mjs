@@ -63,13 +63,13 @@ bot.command("start", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
     // { parse_mode: "HTML" },)
     if (ctx.chat.type === 'private') {
-        await ctx.reply(ctx.t("Hello Hunter!"), {
+        await ctx.reply(ctx.t("starthello"), {
             reply_markup: keyboard
         });
     }
 
     await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/10/31/a32a301cfef3bfd5b21aea9074078d9f.png", {
-        caption: ctx.t(startText),
+        caption: ctx.t("starttext"),
         show_caption_above_media: false,
         parse_mode: "HTML",
         reply_markup: inlineKeyboard,
@@ -79,7 +79,7 @@ bot.command("start", async (ctx) => {
 bot.command("help", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
     // { parse_mode: "HTML" },)
-    await ctx.reply(ctx.t(helpText), {
+    await ctx.reply(ctx.t("helptext"), {
         parse_mode: "HTML",
         reply_markup: inlineKeyboard,
     });
