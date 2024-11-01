@@ -8,7 +8,7 @@ console.info('Secret token:', secret_token)
 
 // Default Vercel hostnames
 const {
-    VERCEL_URL = 'localhost',
+    VERCEL_URL = 'th-bot.vercel.app',
     VERCEL_BRANCH_URL: hostname = VERCEL_URL,
 } = process.env
 

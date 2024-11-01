@@ -6,8 +6,7 @@
     "scripts": {
         "postprepare": "touch .env",
         "env": "npx vercel env pull .env",
-        // "build": "node scripts/build.mjs",
-        "build": "node --watch --env-file=.env scripts/start.mjs",
+        "build": "node scripts/build.mjs",
         "start": "node --watch --env-file=.env scripts/start.mjs"
     },
     "dependencies": {
