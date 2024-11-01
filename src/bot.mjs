@@ -14,7 +14,7 @@ export const {
 const i18n = new I18n({
     defaultLocale: "en",
     useSession: true, // 是否在会话中存储用户的语言
-    directory: "/locales", // 从 locales/ 加载所有翻译文件
+    directory: "locales", // 从 locales/ 加载所有翻译文件
 });
 
 // Default grammY bot instance
