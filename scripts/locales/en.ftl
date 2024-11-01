@@ -1,0 +1,5 @@
+starthello = Hello Hunter!
+
+starttext = <b>👏Welcome to the Tele Hunter Community!</b> \n🐳 TeleHunter is the first telegram user traffic affiliate union. Build your first TG traffic affiliates system, make your affiliates help you earn passive income, and hunt for more telegram network value.!\n💰 Earn $Hunter Points by Inviting More! \n🔥 Participate the Contest to share $6000 Prize Pool. \n <b>Homepage:</b> <a href="https://telehunter.xyz">https://telehunter.xyz</a> \n <b>X:</b> <a href="https://x.com/Tele_Hunter_xyz">https://x.com/Tele_Hunter_xyz</a> \n <b>Blog:</b> <a href="https://medium.com/@telehunter">https://medium.com/@telehunter</a>
+
+helptext = <b>🧑‍🤝‍🧑Dear Hunters, please feel free to contact us anytime while using our products.</b> \n <b>📖 QA Doc</b>If you have any questions, please first look for answers in the QA section. \n <a href="https://telehunters-organization.gitbook.io/telehunter/getting-started/q-and-a">Here is the link</a>.
