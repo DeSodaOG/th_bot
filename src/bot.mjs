@@ -1,5 +1,5 @@
 import { Bot, InlineKeyboard, Keyboard, Context, session, SessionFlavor } from 'grammy'
-import { I18n, I18nFlavor } from "@grammyjs/i18n";
+import { I18n } from "@grammyjs/i18n";
 
 export const {
 
