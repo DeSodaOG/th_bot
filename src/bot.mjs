@@ -8,13 +8,12 @@ const pool = new Pool({
     connectionString: process.env.POSTGRES_URL,
 })
 
-pool.connect((err) => {
-    if (err) throw err
-    console.log("Connect to PostgreSQL successfully!")
-})
-
 async function inputNewUser(uid) {
     try {
+        pool.connect((err) => {
+            if (err) throw err
+            console.log("Connect to PostgreSQL successfully!")
+        })
         const { rows } = await pool.query('INSERT INTO bot_user(uid) VALUES($1) RETURNING *', [uid]);
         console.log(rows)
     } catch (err) {
