@@ -1,5 +1,27 @@
 import { Bot, InlineKeyboard, Keyboard } from 'grammy'
 
+import pg from 'pg';
+
+const { Pool } = pg;
+
+const pool = new Pool({
+    connectionString: process.env.POSTGRES_URL,
+})
+
+pool.connect((err) => {
+    if (err) throw err
+    console.log("Connect to PostgreSQL successfully!")
+})
+
+async function inputNewUser(uid) {
+    try {
+        const { rows } = await pool.query('INSERT INTO bot_user(uid) VALUES($1) RETURNING *', [uid]);
+        console.log(rows)
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 export const {
 
     // Telegram bot token from t.me/BotFather
@@ -52,6 +74,8 @@ bot.command("start", async (ctx) => {
     const is_ru = ctx.from.language_code === 'ru' || ctx.from.language_code == 'be' || ctx.from.language_code === 'uk';
     console.log(ctx.from.language_code)
     if (ctx.chat.type === 'private') {
+        await inputNewUser(ctx.chat.id);
+
         await ctx.reply(is_ru ? "Привет, Хантер!" : "Hello Hunter!", {
             reply_markup: keyboard
         });
