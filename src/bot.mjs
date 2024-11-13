@@ -59,12 +59,19 @@ const keyboard = new Keyboard().webApp(
 bot.on('message:new_chat_members', async (ctx) => {
     // await ctx.reply("Hello, new hunter! claim the init 10000 rewards.");
 
-    await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/10/31/a32a301cfef3bfd5b21aea9074078d9f.png", {
+    const res = await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/11/13/509ab47e86c0a9d4f6369ea2bfa93e4e.png", {
         caption: startText,
         show_caption_above_media: false,
         parse_mode: "HTML",
         reply_markup: inlineKeyboard,
     });
+
+    setTimeout(() => { }, 5000);
+    try {
+        await ctx.api.deleteMessage(ctx.chat.id, res.message_id);
+    } catch (e) {
+        console.error(e);
+    }
 })
 
 bot.command("start", async (ctx) => {
