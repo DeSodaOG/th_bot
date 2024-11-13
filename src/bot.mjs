@@ -65,14 +65,15 @@ bot.on('message:new_chat_members', async (ctx) => {
         parse_mode: "HTML",
         reply_markup: inlineKeyboard,
     });
-
+    console.log('new member');
     setTimeout(async () => {
         try {
             await ctx.api.deleteMessage(ctx.chat.id, res.message_id);
+            console.log('delete message');
         } catch (e) {
-            console.error(e);
+            console.log(e);
         }
-    }, 5000);
+    }, 3000);
 
 })
 
