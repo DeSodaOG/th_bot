@@ -66,7 +66,7 @@ bot.on('message:new_chat_members', async (ctx) => {
         reply_markup: inlineKeyboard,
     });
     console.log('new member');
-    await new Promise(resolve => setTimeout(resolve, 60000));
+    await new Promise(resolve => setTimeout(resolve, 7000));
 
     try {
         await ctx.api.deleteMessage(ctx.chat.id, res.message_id);
