@@ -56,25 +56,25 @@ const keyboard = new Keyboard().webApp(
     "https://th-mini-app-mvp.vercel.app",
 ).resized();
 
-bot.on('message:new_chat_members', async (ctx) => {
-    // await ctx.reply("Hello, new hunter! claim the init 10000 rewards.");
+// bot.on('message:new_chat_members', async (ctx) => {
+//     // await ctx.reply("Hello, new hunter! claim the init 10000 rewards.");
 
-    const res = await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/11/13/509ab47e86c0a9d4f6369ea2bfa93e4e.png", {
-        caption: startText,
-        show_caption_above_media: false,
-        parse_mode: "HTML",
-        reply_markup: inlineKeyboard,
-    });
-    console.log('new member');
-    await new Promise(resolve => setTimeout(resolve, 7000));
+//     const res = await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/11/13/509ab47e86c0a9d4f6369ea2bfa93e4e.png", {
+//         caption: startText,
+//         show_caption_above_media: false,
+//         parse_mode: "HTML",
+//         reply_markup: inlineKeyboard,
+//     });
+//     console.log('new member');
+//     await new Promise(resolve => setTimeout(resolve, 7000));
 
-    try {
-        await ctx.api.deleteMessage(ctx.chat.id, res.message_id);
-        console.log('delete message');
-    } catch (e) {
-        console.log(e);
-    }
-})
+//     try {
+//         await ctx.api.deleteMessage(ctx.chat.id, res.message_id);
+//         console.log('delete message');
+//     } catch (e) {
+//         console.log(e);
+//     }
+// })
 
 bot.command("start", async (ctx) => {
     // ctx.reply('<b>👏Welcome to the catizens universe!</b> <i>Welcome</i> to <a href="https://grammy.dev">grammY</a>.',
