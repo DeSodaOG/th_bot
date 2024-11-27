@@ -57,7 +57,7 @@ const keyboard = new Keyboard().webApp(
 ).resized();
 
 bot.on('message:new_chat_members', async (ctx) => {
-    // await ctx.reply("Hello, new hunter! claim the init 10000 rewards.");
+    await ctx.reply("Hello, new hunter! claim the init 10000 rewards.");
 
     const res = await ctx.replyWithPhoto("https://s1.imagehub.cc/images/2024/11/13/509ab47e86c0a9d4f6369ea2bfa93e4e.png", {
         caption: startText,
